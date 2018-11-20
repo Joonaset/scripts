@@ -1,13 +1,11 @@
 #!/bin/bash
 
 # This script checks if you are connected to your home network
+# and changes crontab accordingly
 CHECK=`nmcli | grep (Your home network SSID here)$`
 if [ -z "$CHECK" ] ; then
-  ~/.scripts/sfwwallpaper.sh
-  echo "*/10 * * * *  DISPLAY=:0 ~/.scripts/sfwwallpaper.sh" > /var/spool/cron/(USER)
-  echo "*/5 * * * * ~/.scripts/networkcheck.sh" >> /var/spool/cron/(USER)
+  sed -i -e 's/home.sh/away.sh/g' /var/spool/cron/(USER)
 else
-  echo "*/10 * * * *  DISPLAY=:0 ~/.scripts/nsfwwallpaper.sh" > /var/spool/cron/(USER)
-  echo "*/5 * * * * ~/.scripts/networkcheck.sh" >> /var/spool/cron/(USER)
+  sed -i -e 's/away.sh/home.sh/g' /var/spool/cron/(USER)
 fi
 
