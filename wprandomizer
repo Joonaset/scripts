@@ -6,4 +6,4 @@ portraitdir=$WPDIR2
 file1=$(ls ${landscapedir} | shuf -n 1)
 file2=$(ls ${portraitdir} | shuf -n 1)
 
-cp ${landscapedir}${file1} ~/.config/wall.png && cp ${portraitdir}${file2} ~/.config/wall2.png && feh --bg-scale ~/.config/wall.png ~/.config/wall2.png
+ln -sf ${landscapedir}${file1} ~/.local/share/bg && ln -sf ${portraitdir}${file2} ~/.local/share/bg2 && feh --bg-scale ~/.local/share/bg ~/.local/share/bg2

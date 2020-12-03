@@ -29,3 +29,11 @@ Search upwards for pom.xml and run maven using it. I don't use this anymore as I
 ## gitpuller.sh
 
 Automate pulling repos.
+
+## wprandomizer
+
+Set two random wallpapers from different folders as `feh --bg-scale --randomize dir1/* dir2/*` produces strange errors every once in a while.
+
+## sxbg
+
+Meant to be used with sxiv key handler. Reads file directory and sets wallpaper on correct monitor. (I have monitors in landscape and portrait rotations)
