@@ -37,3 +37,7 @@ Set two random wallpapers from different folders as `feh --bg-scale --randomize 
 ## sxbg
 
 Meant to be used with sxiv key handler. Reads file directory and sets wallpaper on correct monitor. (I have monitors in landscape and portrait rotations)
+
+## mpdrandom.py
+
+Shuffles current mpd playlist by albums. If album info empty, uses artist name instead of album. Requires python-musicpd.
