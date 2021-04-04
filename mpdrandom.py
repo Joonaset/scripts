@@ -14,17 +14,18 @@ class MpdClient():
         for song in playlist:
             try:
                 if song['album'] == '':
-                    album = song['artist']
+                    album = str(song['artist'])
                 else:
-                    album = song['album']
-
+                    album = str(song['album'])
             except KeyError:
                 album = 'None'
-
-            if album not in albums:
-                albums[album] = [song]
-            else:
-                albums[album].append(song)
+            try:
+                if album not in albums:
+                    albums[album] = [song]
+                else:
+                    albums[album].append(song)
+            except TypeError:
+                print(album)
         return albums
 
     def currentsong(self):
