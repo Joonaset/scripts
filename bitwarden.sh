@@ -5,7 +5,10 @@ notify-send "Fetching password for $URL"
 
 mpw=$(dmenupass "Master Password")
 session=$(bw unlock "$mpw" --raw) || notify-send "Wrong password"
+username=$(bw get username "$URL" --session "$session")
 pass=$(bw get password "$URL" --session "$session") &&
-echo "$pass" | xsel -b -t 10000 || exit 1
 
-notify-send -t 10000 "Password Copied to clipboard"
+# Implementing fake-key to enter fetched info on page
+echo "fake-key $username" >> "$QUTE_FIFO"
+echo "fake-key <Tab>" >> "$QUTE_FIFO"
+echo "fake-key $pass" >> "$QUTE_FIFO"
