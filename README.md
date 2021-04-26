@@ -4,7 +4,7 @@ This repo contains bash scripts
 
 ## bitwarden.sh
 
-Use this with qutebrowser. Fetches password for page you are currently on and stores it in clipboard for 10 seconds. Requires [bitwarden-cli](https://raw.githubusercontent.com/Argetlami/scripts/master/bash/section-upload?token=AIWCPW2GU43JJ3KXJGELWJS64JURO)
+Use this with qutebrowser. Fetches username and password for current site and enters it in manner of \[username\]<TAB>\[password\](keep cursor focus in username field). Requires [bitwarden-cli](https://raw.githubusercontent.com/Argetlami/scripts/master/bash/section-upload?token=AIWCPW2GU43JJ3KXJGELWJS64JURO)
 and [dmenupass](https://raw.githubusercontent.com/Argetlami/scripts/master/bash/section-upload?token=AIWCPW2GU43JJ3KXJGELWJS64JURO)
 place or link script file in .local/bin/qutebrowser/userscripts and call in qutebrowser with `spawn --userscript bitwarden.sh`
 
